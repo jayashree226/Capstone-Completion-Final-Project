@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import userRouter from './routes/user.js';
 import morgan from "morgan";
-
+import  cors from "cors";
 // env variables
 dotenv.config();
 
@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 4000;
 // Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
-
+app.use(cors())
 // Routes
 app.get('/', (req, res) => {
     res.send('Welcome to the User Auth API!');

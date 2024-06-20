@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function SearchBar() {
 
-const App_ID = "02c78881"
+const APP_ID = "02c78881"
 const APP_KEY = "2de0325c800e9a3fdad5f29cb4501560	"
 
   const [recipes, setRecipes] = useState([]);
@@ -17,9 +17,12 @@ const APP_KEY = "2de0325c800e9a3fdad5f29cb4501560	"
 );
 
   const getRecipe = async() =>{
-    const res = await fetch(`<https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
-    const data = await res.json;
-    console.log(data.hits);
+    console.log(query);
+    console.log(APP_ID);
+    console.log(APP_KEY);
+    const res = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`);
+    const data = await res.json();
+    console.log(data);
     setRecipes(data.hits);
   };
 
@@ -30,6 +33,7 @@ const APP_KEY = "2de0325c800e9a3fdad5f29cb4501560	"
     const getSearch = (e) =>{
       e.preventDefault();
       setQuery(search);
+      console.log(search);
       setSearch("");
 
     }
@@ -41,12 +45,14 @@ const APP_KEY = "2de0325c800e9a3fdad5f29cb4501560	"
         <button type="submit">Submit</button>
         </form>
         <div>
-          {recipes.map((item, id) =>(
+          {recipes?recipes.map((item, id) =>(
+           
             <div key={id}>
-                <h2>{item.recipes.label}</h2>
-                <img src={item.recipes.image} />
+               {console.log(item)}
+                <h2>{item.recipe.label}</h2>
+                <img src={item.recipe.image} />
             </div>
-          ))}
+          )):<h1>No recipe to display</h1>}
         </div>
     </div>
   );
