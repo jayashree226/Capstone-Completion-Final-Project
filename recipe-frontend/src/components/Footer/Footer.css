@@ -1,0 +1,11 @@
+.footbar a{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 3px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    background-color:black;background-color: rgb(159, 228, 106);width: 100%;
+    text-align: left;
+    color: rgb(15, 15, 15);
+}

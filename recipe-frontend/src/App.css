@@ -1,0 +1,17 @@
+body{
+    background-image: url(./images/Recipe_img2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(114, 230, 37);
+    text-align: center;
+}
+.about{
+color: rgb(243, 172, 84);
+text-align: justify;
+font-size: 18px;
+padding: auto;
+}
+.login{
+margin: 0;
+color: brown;
+}

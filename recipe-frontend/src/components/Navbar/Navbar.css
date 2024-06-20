@@ -1,0 +1,18 @@
+.navbar a{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 3px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgb(159, 228, 106);
+    color: rgb(15, 15, 15);
+    gap: 2px;
+    
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 20px;
+}
